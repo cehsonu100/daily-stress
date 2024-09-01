@@ -88,7 +88,7 @@ export default function ClientSideComponent({ questionsWithStatus, session }) {
   return (
     <div className="flex flex-col items-center mt-10">
       <div className="flex justify-between w-4/5 mb-4">
-        <label className="flex items-center gap-2 input input-bordered">
+        <label className="flex items-center gap-2 input input-bordered input-primary">
           <input
             type="text"
             placeholder="Search..."
@@ -110,7 +110,7 @@ export default function ClientSideComponent({ questionsWithStatus, session }) {
         
         <div className="relative w-1/2 text-right" ref={dropdownRef}>
           <button
-            className="w-full max-w-xs px-4 py-2 text-white bg-blue-500 rounded-lg select select-primary"
+            className="w-full max-w-xs px-4 py-2 text-black rounded-lg btn-outline select select-primary"
             onClick={() => setDropdownOpen(!dropdownOpen)}
           >
             Select Tags
