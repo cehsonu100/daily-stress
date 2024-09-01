@@ -9,29 +9,38 @@ const ButtonToDSA = () => {
 
   return (
     <button
-      className="relative px-6 py-3 m-5 overflow-hidden font-bold text-white transition-transform transform border-2 border-transparent rounded-lg  bg-gradient-to-r from-purple-500 to-blue-500 hover:scale-105 hover:shadow-glow animate-glow-effect"
+      className="relative px-6 py-3 m-5 overflow-hidden font-bold text-white transition-transform transform rounded-lg  bg-gradient-to-r from-red-300 via-blue-500 to-green-500 hover:scale-110 group"
       onClick={() => handleClick('/dsaquestions')}
     >
-      DSA Questions
+      <span className="relative z-10">DSA Questions</span>
+      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-red-300 via-blue-500 to-green-500 opacity-40 animate-gradient"></div>
       <style jsx>{`
-        .animate-glow-effect {
-          animation: glow 1.5s ease-in-out infinite;
-        }
-        
-        .hover\\:shadow-glow:hover {
-          box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+        .animate-gradient {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to right, rgba(255, 99, 71, 0.8), rgba(255, 215, 0, 0.8), rgba(0, 0, 255, 0.8), rgba(0, 255, 0, 0.8), rgba(128, 0, 128, 0.8));
+          background-size: 400% 400%;
+          z-index: 0;
+          animation: gradient 4s ease infinite;
         }
 
-        @keyframes glow {
+        @keyframes gradient {
           0% {
-            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+            background-position: 0% 0%;
           }
           50% {
-            box-shadow: 0 0 20px rgba(255, 0, 255, 0.7);
+            background-position: 100% 100%;
           }
           100% {
-            box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+            background-position: 0% 0%;
           }
+        }
+
+        button {
+          position: relative;
         }
       `}</style>
     </button>
