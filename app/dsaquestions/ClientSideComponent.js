@@ -5,11 +5,11 @@ import { supabase } from "../../lib/supabaseClient";
 
 const tagColors = {
   Facebook: "badge-primary badge-outline",
-  Microsoft: "badge-secondary badge-outline",
+  Microsoft: "badge-warning badge-outline",
   Amazon: "badge-accent badge-outline",
-  Apple: "badge-neutral badge-outline",
+  Apple: "badge-info badge-outline",
   Adobe: "badge-success badge-outline",
-  Uber: "badge-warning badge-outline",
+  Uber: "badge-secondary badge-outline",
   Google: "badge-error badge-outline",
 };
 
@@ -110,7 +110,7 @@ export default function ClientSideComponent({ questionsWithStatus, session }) {
         
         <div className="relative w-1/2 text-right" ref={dropdownRef}>
           <button
-            className="w-full max-w-xs px-4 py-2 text-black rounded-lg btn-outline select select-primary"
+            className="w-full max-w-xs px-4 py-2 rounded-lg btn-outline select select-primary"
             onClick={() => setDropdownOpen(!dropdownOpen)}
           >
             Select Tags
